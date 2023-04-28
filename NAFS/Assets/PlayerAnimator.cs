@@ -5,20 +5,28 @@ using UnityEngine;
 
 public class PlayerAnimator : MonoBehaviour
 {
-    public Animator animator;
+    public Animator playerCharacterAnimator;
+    public Animator toolAnimator;
 
     public void UpdateVelocity(Vector3 velocity)
     {
         bool idle = velocity.Equals(Vector3.zero);
 
-        animator.SetBool("idle", idle);
+        playerCharacterAnimator.SetBool("idle", idle);
+        toolAnimator.SetBool("idle", idle);
 
         if (idle)
             return;
 
-        Debug.Log(velocity);
+        playerCharacterAnimator.SetFloat("velx", velocity.x);
+        playerCharacterAnimator.SetFloat("vely", velocity.y);
+        toolAnimator.SetFloat("velx", velocity.x);
+        toolAnimator.SetFloat("vely", velocity.y);
+    }
 
-        animator.SetFloat("velx", velocity.x);
-        animator.SetFloat("vely", velocity.y);
+    internal void UseTool()
+    {
+        playerCharacterAnimator.SetTrigger("attack");
+        toolAnimator.SetTrigger("attack");
     }
 }

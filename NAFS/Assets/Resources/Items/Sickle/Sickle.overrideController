@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!221 &22100000
+AnimatorOverrideController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Sickle
+  m_Controller: {fileID: 9100000, guid: d9ee40e5fbd94f1479429d6a3ab7d7da, type: 2}
+  m_Clips:
+  - m_OriginalClip: {fileID: 7400000, guid: 10c1a3609a6f3364caf52c4337e984c1, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: b96aa733b98136645ab1b938d82ae6a6, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: a0e7ae65b1f431644894f09d981dbe65, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: ddc4fba1a8709764d9d62b2a73d10900, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: a182a9b02e2a0fc4db692c94cdc84ae5, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 2a2074879091cea47b2f9844749a455b, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: 99201eece9dbff743863f12c7e984441, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 24be7ad83ea74af428b13d1a0dd64cb0, type: 2}
