@@ -74,5 +74,8 @@ public class Inventory : MonoBehaviour
         }
     }
 
-    
+    public void Select(string index)
+    {
+
+    }
 }

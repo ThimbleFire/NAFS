@@ -196,8 +196,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   item:
-    Name: Sickle
+    Name: 
     ItemType: 0
-    SpriteUIFilename: UI/Items/sickle
-    animationControllerOverrideFileName: Items/Sickle/Sickle
+    SpriteUIFilename: 
+    animationControllerOverrideFileName: 
   image: {fileID: 0}
