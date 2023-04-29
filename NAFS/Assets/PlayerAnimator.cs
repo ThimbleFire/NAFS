@@ -8,6 +8,11 @@ public class PlayerAnimator : MonoBehaviour
     public Animator playerCharacterAnimator;
     public Animator toolAnimator;
 
+    private void Awake()
+    {
+        Inventory.OnActiveItemChangeFromPickup += Inventory_OnActiveItemChangeFromPickup;
+    }
+
     public void UpdateVelocity(Vector3 velocity)
     {
         bool idle = velocity.Equals(Vector3.zero);
@@ -28,5 +33,10 @@ public class PlayerAnimator : MonoBehaviour
     {
         playerCharacterAnimator.SetTrigger("attack");
         toolAnimator.SetTrigger("attack");
+    }
+
+    private void Inventory_OnActiveItemChangeFromPickup(string animationControllerOverrideFileName)
+    {
+        toolAnimator.runtimeAnimatorController = Resources.Load<AnimatorOverrideController>(animationControllerOverrideFileName);
     }
 }

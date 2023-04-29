@@ -30,8 +30,8 @@ public class pickup : MonoBehaviour
 
         if (Vector3.Distance(PlayerCharacter.WorldPosition, transform.position) <= 0.01f)
         {
-            Inventory.AddItem(itemMono.item);
-            Destroy(gameObject, 1.0f);
+            Inventory.AddItem(itemMono);
+            Destroy(gameObject);
         }
     }
 }

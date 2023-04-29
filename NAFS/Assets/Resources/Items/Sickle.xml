@@ -3,5 +3,5 @@
   <Name>Sickle</Name>
   <ItemType>TOOL</ItemType>
   <SpriteUIFilename>UI/Items/sickle</SpriteUIFilename>
-  <animationControllerOverrideFileName>Items/Sickle</animationControllerOverrideFileName>
+  <animationControllerOverrideFileName>Items/Sickle/Sickle</animationControllerOverrideFileName>
 </Item>
