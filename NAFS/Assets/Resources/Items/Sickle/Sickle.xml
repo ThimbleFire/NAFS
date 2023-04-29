@@ -2,6 +2,6 @@
 <Item xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <Name>Sickle</Name>
   <ItemType>TOOL</ItemType>
-  <SpriteUIFilename>UI/Items/Sickle</SpriteUIFilename>
+  <SpriteUIFilename>UI/Items/sickle</SpriteUIFilename>
   <animationControllerOverrideFileName>Items/Sickle/Sickle</animationControllerOverrideFileName>
 </Item>

@@ -7,7 +7,7 @@ AnimatorOverrideController:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: Sickle
-  m_Controller: {fileID: 9100000, guid: d9ee40e5fbd94f1479429d6a3ab7d7da, type: 2}
+  m_Controller: {fileID: 9100000, guid: 67fc9a8a3d1d58b4b8c16a97da9f8506, type: 2}
   m_Clips:
   - m_OriginalClip: {fileID: 7400000, guid: 10c1a3609a6f3364caf52c4337e984c1, type: 2}
     m_OverrideClip: {fileID: 7400000, guid: b96aa733b98136645ab1b938d82ae6a6, type: 2}

@@ -18,20 +18,20 @@ public class PlayerAnimator : MonoBehaviour
         bool idle = velocity.Equals(Vector3.zero);
 
         playerCharacterAnimator.SetBool("idle", idle);
-        toolAnimator.SetBool("idle", idle);
 
         if (idle)
             return;
 
         playerCharacterAnimator.SetFloat("velx", velocity.x);
         playerCharacterAnimator.SetFloat("vely", velocity.y);
-        toolAnimator.SetFloat("velx", velocity.x);
-        toolAnimator.SetFloat("vely", velocity.y);
     }
 
-    internal void UseTool()
+    internal void UseTool(Vector3 lastDirection)
     {
         playerCharacterAnimator.SetTrigger("attack");
+
+        toolAnimator.SetFloat("velx", lastDirection.x);
+        toolAnimator.SetFloat("vely", lastDirection.y);
         toolAnimator.SetTrigger("attack");
     }
 

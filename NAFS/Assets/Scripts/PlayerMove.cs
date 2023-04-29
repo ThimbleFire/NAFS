@@ -20,7 +20,7 @@ public class PlayerMove : MonoBehaviour
     public Vector3Int OnTile { get { return grid.WorldToCell(transform.position); } }
 
     private Vector3Int lastTile = Vector3Int.zero;
-    private Vector3 lastDirection;
+    private Vector3 lastDirection = Vector3.down;
     private Vector3 lastPosition;
 
     private void Awake() => lastPosition = transform.position;
@@ -41,9 +41,8 @@ public class PlayerMove : MonoBehaviour
         if (Input.GetKey(KeyCode.S)) {
             velocity += Time.smoothDeltaTime * walkSpeed * Vector3.down;
         }
-
         if (Input.GetKeyDown(KeyCode.F)) {
-            pAnimator.UseTool();
+            pAnimator.UseTool(lastDirection);
         }
 
         Vector3 direction = velocity.normalized;
@@ -51,16 +50,19 @@ public class PlayerMove : MonoBehaviour
         transform.Translate(velocity);
         pAnimator.UpdateVelocity(direction);
 
-        if (lastDirection != direction) {
+        // OnDirectionChange
+        if (lastDirection != direction && direction != Vector3.zero ) {
             OnDirectionChange?.Invoke(direction);
             lastDirection = direction;
         }
 
+        // OnTileChange
         if(lastTile != OnTile) {
             OnTileChange?.Invoke(OnTile);
             lastTile = OnTile;
         }
 
+        // OnMove
         if(lastPosition != transform.position) {
             OnMove?.Invoke(transform.position);
             lastPosition = transform.position;
