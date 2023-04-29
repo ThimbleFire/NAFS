@@ -11,6 +11,7 @@ public class PlayerAnimator : MonoBehaviour
     private void Awake()
     {
         Inventory.OnActiveItemChangeFromPickup += Inventory_OnActiveItemChangeFromPickup;
+        Inventory.OnActiveItemChangeFromUnequip += Inventory_OnActiveItemChangeFromUnequip;
     }
 
     public void UpdateVelocity(Vector3 velocity)
@@ -38,5 +39,10 @@ public class PlayerAnimator : MonoBehaviour
     private void Inventory_OnActiveItemChangeFromPickup(string animationControllerOverrideFileName)
     {
         toolAnimator.runtimeAnimatorController = Resources.Load<AnimatorOverrideController>(animationControllerOverrideFileName);
+    }
+
+    private void Inventory_OnActiveItemChangeFromUnequip()
+    {
+        toolAnimator.runtimeAnimatorController = null;
     }
 }

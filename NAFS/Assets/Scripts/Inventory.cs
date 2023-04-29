@@ -8,10 +8,13 @@ public class Inventory : MonoBehaviour
     public delegate void OnActiveItemChangeFromPickupHandler(string animation);
     public static event OnActiveItemChangeFromPickupHandler OnActiveItemChangeFromPickup;
 
+    public delegate void OnActiveItemChangeUnequipHandler();
+    public static event OnActiveItemChangeUnequipHandler OnActiveItemChangeFromUnequip;
+
     public static GameObject itemPrefab;
     public static Transform[] slot;
     public static byte CountEmptySlots = 9;
-    public static byte activeSlot = 1;
+    public static int activeSlot = 1;
 
     private void Awake()
     {
@@ -74,8 +77,17 @@ public class Inventory : MonoBehaviour
         }
     }
 
-    public void Select(string index)
+    public void Select(int index)
     {
+        activeSlot = index;
 
+        if (slot[index].childCount == 0) {
+            OnActiveItemChangeFromUnequip?.Invoke();
+            return;
+        }
+
+        if (slot[index].GetChild(0).TryGetComponent<ItemMono>(out ItemMono itemMono)) {
+            OnActiveItemChangeFromPickup?.Invoke(itemMono.item.animationControllerOverrideFileName);
+        }
     }
 }
