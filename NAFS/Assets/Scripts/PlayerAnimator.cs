@@ -7,6 +7,7 @@ public class PlayerAnimator : MonoBehaviour
 {
     public Animator playerCharacterAnimator;
     public Animator toolAnimator;
+    Item.UseAnimation animationType;
 
     private void Awake()
     {
@@ -29,6 +30,9 @@ public class PlayerAnimator : MonoBehaviour
 
     internal void UseTool(Vector3 lastDirection)
     {
+        if(animationType == Item.UseAnimation.NONE)
+            return;
+
         playerCharacterAnimator.SetTrigger("attack");
 
         toolAnimator.SetFloat("velx", lastDirection.x);
@@ -36,13 +40,14 @@ public class PlayerAnimator : MonoBehaviour
         toolAnimator.SetTrigger("attack");
     }
 
-    private void Inventory_OnActiveItemChangeFromPickup(string animationControllerOverrideFileName)
+    private void Inventory_OnActiveItemChangeFromPickup(Item item)
     {
-        toolAnimator.runtimeAnimatorController = Resources.Load<AnimatorOverrideController>(animationControllerOverrideFileName);
+        //toolAnimator.sprite = item.spriteLoaded:
+        animationType = item.useAnimation;
     }
 
     private void Inventory_OnActiveItemChangeFromUnequip()
     {
-        toolAnimator.runtimeAnimatorController = null;
+        animationType = Item.UseAnimation.NONE;
     }
 }

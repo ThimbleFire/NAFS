@@ -23,4 +23,12 @@ public class Helper
             "Food",
             "Seed",
     };
+
+    public static string[] ItemAnimationNames = new string[4]
+    {
+            "None",
+            "Slash",
+            "Stab",
+            "Overhead Swing"
+    };
 }
