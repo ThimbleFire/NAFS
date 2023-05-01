@@ -1,11 +1,10 @@
 # NAFS
  Not another farm sim
 
-## To-do 
+## To-do
 - [x] Add: grass rule tiles
 - [x] Add: character
 - [x] Add: movement
-- [ ] Add: mobile joystick & btn(s)
 - [x] Add: animation
 - [x] Add: cursor box
 
@@ -33,15 +32,24 @@
 
 ![digDemo](https://user-images.githubusercontent.com/14812476/235429649-434cb96c-bd02-43b9-8666-8092be3a4725.gif)
 
+- [ ] Add: mobile joystick & btn(s)
+- [ ] Add: tilling
 - [ ] Add: sowing
 - [ ] Add: day & night, clock
 - [ ] Add: growing
 - [ ] Add: harvesting
+- [ ] Add: destroyable foilage
 - [ ] Add: friendly npc
 - [ ] Add: dialog
 - [ ] Add: selling
 - [ ] Add: buying
 - [ ] Add: saving
-- [ ] Add: loading 
+- [ ] Add: loading
 - [ ] Add: house
-
+- [ ] Add: mining
+- [ ] Add: NPC town
+- [ ] Add: NPC agency
+           Performing jobs & activities,
+           and sleeping at night
+- [ ] Add: Character creation and customisation 
+- [ ] Add: stamina, health, and eating
