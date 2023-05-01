@@ -1,9 +1,14 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Tilemaps;
 
 public class Cursor : MonoBehaviour
 {
+    public static Tilemap tilemapGrass;
+    public static Tilemap tileMapDirt;
+
     public static Vector3Int Position { get; set; } = Vector3Int.zero;
     private Vector3Int lastTile = Vector3Int.zero;
     public Grid grid;
@@ -13,6 +18,9 @@ public class Cursor : MonoBehaviour
     {
         PlayerMove.OnTileChange += PlayerMove_OnTileChange;
         PlayerMove.OnDirectionChange += PlayerMove_OnDirectionChange;
+
+        tilemapGrass = GameObject.Find("Dynamic Grass Layer").GetComponent<Tilemap>();
+        tileMapDirt = GameObject.Find("Dynamic Dirt Layer").GetComponent<Tilemap>();
 
         renderer = GetComponent<SpriteRenderer>();
     }
@@ -39,6 +47,11 @@ public class Cursor : MonoBehaviour
     public static void Show()
     {
         renderer.enabled = true;
+    }
+
+    public static void RemoveGrass()
+    {
+        tilemapGrass.SetTile(Position, null);
     }
 
     public static void Hide()

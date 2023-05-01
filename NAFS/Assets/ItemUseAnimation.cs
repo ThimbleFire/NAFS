@@ -6,7 +6,8 @@ public class ItemUseAnimation : MonoBehaviour
 {
     public SpriteRenderer renderer;
     public Animator animator;
-    private Item.UseAnimation animationType;
+    public Item.UseAnimation animationType;
+    public bool InMotion { get; set; } = false;
 
     public void Awake()
     {
@@ -20,15 +21,29 @@ public class ItemUseAnimation : MonoBehaviour
         if (animationType == Item.UseAnimation.NONE)
             return;
 
+        InMotion = true;
         renderer.enabled = true;
         animator.SetFloat("velx", lastDirection.x);
         animator.SetFloat("vely", lastDirection.y);
-        animator.SetTrigger("attack");
+        animator.SetTrigger(animationType.ToString());
+
+        switch (animationType)
+        {
+            case Item.UseAnimation.NONE:
+            case Item.UseAnimation.SLASH:
+            case Item.UseAnimation.STAB:
+            case Item.UseAnimation.OVERHEAD_SWING:
+                break;
+            case Item.UseAnimation.DIG:
+                Cursor.RemoveGrass();
+                break;
+        }
     }
 
     public void EndAnimation()
     {
         renderer.enabled = false;
+        InMotion = false;
     }
 
     private void Inventory_OnActiveItemChangeFromPickup(Item item)

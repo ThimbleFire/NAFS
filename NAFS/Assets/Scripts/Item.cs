@@ -18,7 +18,8 @@ public class Item
         NONE,
         SLASH,
         STAB,
-        OVERHEAD_SWING
+        OVERHEAD_SWING,
+        DIG
     }
 
     public string Name = string.Empty;

@@ -24,11 +24,12 @@ public class Helper
             "Seed",
     };
 
-    public static string[] ItemAnimationNames = new string[4]
+    public static string[] ItemAnimationNames = new string[5]
     {
             "None",
             "Slash",
             "Stab",
-            "Overhead Swing"
+            "Overhead Swing",
+            "Dig"
     };
 }

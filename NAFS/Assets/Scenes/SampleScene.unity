@@ -6775,6 +6775,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   renderer: {fileID: 194783059}
   animator: {fileID: 8296479765051929318}
+  animationType: 0
 --- !u!212 &194783059 stripped
 SpriteRenderer:
   m_CorrespondingSourceObject: {fileID: 1569106561, guid: daad379e1ad3fb2439e88dfa59df37ac, type: 3}
@@ -7430,7 +7431,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4902443269711366312, guid: ed11f61c5143f4844856ebe2ccb22a7a, type: 3}
       propertyPath: item.useAnimation
-      value: 2
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 4902443269711366312, guid: ed11f61c5143f4844856ebe2ccb22a7a, type: 3}
       propertyPath: item.SpriteUIFilename
@@ -7442,15 +7443,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4902443269711366314, guid: ed11f61c5143f4844856ebe2ccb22a7a, type: 3}
       propertyPath: m_RootOrder
-      value: 7
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 4902443269711366314, guid: ed11f61c5143f4844856ebe2ccb22a7a, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 3.7445
+      value: 2.0565
       objectReference: {fileID: 0}
     - target: {fileID: 4902443269711366314, guid: ed11f61c5143f4844856ebe2ccb22a7a, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.5724
+      value: 0.59040004
       objectReference: {fileID: 0}
     - target: {fileID: 4902443269711366314, guid: ed11f61c5143f4844856ebe2ccb22a7a, type: 3}
       propertyPath: m_LocalPosition.z
@@ -13339,6 +13340,91 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
+--- !u!1001 &1311351822
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4902443269711366308, guid: ed11f61c5143f4844856ebe2ccb22a7a, type: 3}
+      propertyPath: m_Name
+      value: Sickle
+      objectReference: {fileID: 0}
+    - target: {fileID: 4902443269711366309, guid: ed11f61c5143f4844856ebe2ccb22a7a, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: eb0f7028945f9a74f8f11b0bddcd1389, type: 3}
+    - target: {fileID: 4902443269711366309, guid: ed11f61c5143f4844856ebe2ccb22a7a, type: 3}
+      propertyPath: m_WasSpriteAssigned
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4902443269711366312, guid: ed11f61c5143f4844856ebe2ccb22a7a, type: 3}
+      propertyPath: item.Name
+      value: Sickle
+      objectReference: {fileID: 0}
+    - target: {fileID: 4902443269711366312, guid: ed11f61c5143f4844856ebe2ccb22a7a, type: 3}
+      propertyPath: item.sprite
+      value: Items/Sickle/Sickle
+      objectReference: {fileID: 0}
+    - target: {fileID: 4902443269711366312, guid: ed11f61c5143f4844856ebe2ccb22a7a, type: 3}
+      propertyPath: item.useAnimation
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4902443269711366312, guid: ed11f61c5143f4844856ebe2ccb22a7a, type: 3}
+      propertyPath: item.SpriteUIFilename
+      value: Items/Spade/Spade
+      objectReference: {fileID: 0}
+    - target: {fileID: 4902443269711366312, guid: ed11f61c5143f4844856ebe2ccb22a7a, type: 3}
+      propertyPath: item.animationControllerOverrideFileName
+      value: Items/Spade/Spade
+      objectReference: {fileID: 0}
+    - target: {fileID: 4902443269711366314, guid: ed11f61c5143f4844856ebe2ccb22a7a, type: 3}
+      propertyPath: m_RootOrder
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 4902443269711366314, guid: ed11f61c5143f4844856ebe2ccb22a7a, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 1.21
+      objectReference: {fileID: 0}
+    - target: {fileID: 4902443269711366314, guid: ed11f61c5143f4844856ebe2ccb22a7a, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.244
+      objectReference: {fileID: 0}
+    - target: {fileID: 4902443269711366314, guid: ed11f61c5143f4844856ebe2ccb22a7a, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4902443269711366314, guid: ed11f61c5143f4844856ebe2ccb22a7a, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4902443269711366314, guid: ed11f61c5143f4844856ebe2ccb22a7a, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4902443269711366314, guid: ed11f61c5143f4844856ebe2ccb22a7a, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4902443269711366314, guid: ed11f61c5143f4844856ebe2ccb22a7a, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4902443269711366314, guid: ed11f61c5143f4844856ebe2ccb22a7a, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4902443269711366314, guid: ed11f61c5143f4844856ebe2ccb22a7a, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4902443269711366314, guid: ed11f61c5143f4844856ebe2ccb22a7a, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: ed11f61c5143f4844856ebe2ccb22a7a, type: 3}
 --- !u!1001 &1419614070
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -13930,91 +14016,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4122d2f2c3d5bfd49950fe9251b40f93, type: 3}
---- !u!1001 &4902443269557582706
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 4902443269711366308, guid: ed11f61c5143f4844856ebe2ccb22a7a, type: 3}
-      propertyPath: m_Name
-      value: Sickle
-      objectReference: {fileID: 0}
-    - target: {fileID: 4902443269711366309, guid: ed11f61c5143f4844856ebe2ccb22a7a, type: 3}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: 21300000, guid: eb0f7028945f9a74f8f11b0bddcd1389, type: 3}
-    - target: {fileID: 4902443269711366309, guid: ed11f61c5143f4844856ebe2ccb22a7a, type: 3}
-      propertyPath: m_WasSpriteAssigned
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4902443269711366312, guid: ed11f61c5143f4844856ebe2ccb22a7a, type: 3}
-      propertyPath: item.Name
-      value: Sickle
-      objectReference: {fileID: 0}
-    - target: {fileID: 4902443269711366312, guid: ed11f61c5143f4844856ebe2ccb22a7a, type: 3}
-      propertyPath: item.sprite
-      value: Items/Sickle/Sickle
-      objectReference: {fileID: 0}
-    - target: {fileID: 4902443269711366312, guid: ed11f61c5143f4844856ebe2ccb22a7a, type: 3}
-      propertyPath: item.useAnimation
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4902443269711366312, guid: ed11f61c5143f4844856ebe2ccb22a7a, type: 3}
-      propertyPath: item.SpriteUIFilename
-      value: Items/Sickle/Sickle
-      objectReference: {fileID: 0}
-    - target: {fileID: 4902443269711366312, guid: ed11f61c5143f4844856ebe2ccb22a7a, type: 3}
-      propertyPath: item.animationControllerOverrideFileName
-      value: Items/Sickle/Sickle
-      objectReference: {fileID: 0}
-    - target: {fileID: 4902443269711366314, guid: ed11f61c5143f4844856ebe2ccb22a7a, type: 3}
-      propertyPath: m_RootOrder
-      value: 6
-      objectReference: {fileID: 0}
-    - target: {fileID: 4902443269711366314, guid: ed11f61c5143f4844856ebe2ccb22a7a, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 3.558
-      objectReference: {fileID: 0}
-    - target: {fileID: 4902443269711366314, guid: ed11f61c5143f4844856ebe2ccb22a7a, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 1.583
-      objectReference: {fileID: 0}
-    - target: {fileID: 4902443269711366314, guid: ed11f61c5143f4844856ebe2ccb22a7a, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4902443269711366314, guid: ed11f61c5143f4844856ebe2ccb22a7a, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4902443269711366314, guid: ed11f61c5143f4844856ebe2ccb22a7a, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4902443269711366314, guid: ed11f61c5143f4844856ebe2ccb22a7a, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4902443269711366314, guid: ed11f61c5143f4844856ebe2ccb22a7a, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4902443269711366314, guid: ed11f61c5143f4844856ebe2ccb22a7a, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4902443269711366314, guid: ed11f61c5143f4844856ebe2ccb22a7a, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4902443269711366314, guid: ed11f61c5143f4844856ebe2ccb22a7a, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: ed11f61c5143f4844856ebe2ccb22a7a, type: 3}
 --- !u!1001 &8296479765051929317
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -14059,6 +14060,10 @@ PrefabInstance:
       value: 0.16
       objectReference: {fileID: 0}
     - target: {fileID: 1569106561, guid: daad379e1ad3fb2439e88dfa59df37ac, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 1569106561, guid: daad379e1ad3fb2439e88dfa59df37ac, type: 3}
       propertyPath: m_SortingOrder
       value: 4
       objectReference: {fileID: 0}
@@ -14088,11 +14093,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2331047471585377398, guid: daad379e1ad3fb2439e88dfa59df37ac, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 2.8
+      value: 1.205
       objectReference: {fileID: 0}
     - target: {fileID: 2331047471585377398, guid: daad379e1ad3fb2439e88dfa59df37ac, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.52
+      value: 0.538
       objectReference: {fileID: 0}
     - target: {fileID: 2331047471585377398, guid: daad379e1ad3fb2439e88dfa59df37ac, type: 3}
       propertyPath: m_LocalPosition.z
@@ -14126,6 +14131,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5783049592557860914, guid: daad379e1ad3fb2439e88dfa59df37ac, type: 3}
+      propertyPath: toolAnimator
+      value: 
+      objectReference: {fileID: 194783058}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: daad379e1ad3fb2439e88dfa59df37ac, type: 3}
 --- !u!95 &8296479765051929318 stripped

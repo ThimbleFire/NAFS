@@ -23,6 +23,9 @@ public class PlayerAnimator : MonoBehaviour
 
     internal void UseTool(Vector3 lastDirection)
     {
+        if (toolAnimator.InMotion)
+            return;
+
         playerCharacterAnimator.SetTrigger("attack");
         toolAnimator.StartAnimation(lastDirection);
     }
