@@ -79,6 +79,9 @@ public class Inventory : MonoBehaviour
 
     public void Select(int index)
     {
+        if (activeSlot == index)
+            return;
+
         activeSlot = index;
 
         if (slot[index].childCount == 0) {
