@@ -6756,6 +6756,30 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
+--- !u!1 &194783057 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1569106558, guid: daad379e1ad3fb2439e88dfa59df37ac, type: 3}
+  m_PrefabInstance: {fileID: 8296479765051929317}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &194783058
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 194783057}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c9e10b61394ed294382c345f73f5f7bc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  renderer: {fileID: 194783059}
+  animator: {fileID: 8296479765051929318}
+--- !u!212 &194783059 stripped
+SpriteRenderer:
+  m_CorrespondingSourceObject: {fileID: 1569106561, guid: daad379e1ad3fb2439e88dfa59df37ac, type: 3}
+  m_PrefabInstance: {fileID: 8296479765051929317}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &204217899
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7399,6 +7423,14 @@ PrefabInstance:
     - target: {fileID: 4902443269711366312, guid: ed11f61c5143f4844856ebe2ccb22a7a, type: 3}
       propertyPath: item.Name
       value: Spade
+      objectReference: {fileID: 0}
+    - target: {fileID: 4902443269711366312, guid: ed11f61c5143f4844856ebe2ccb22a7a, type: 3}
+      propertyPath: item.sprite
+      value: Items/Spade/Spade
+      objectReference: {fileID: 0}
+    - target: {fileID: 4902443269711366312, guid: ed11f61c5143f4844856ebe2ccb22a7a, type: 3}
+      propertyPath: item.useAnimation
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 4902443269711366312, guid: ed11f61c5143f4844856ebe2ccb22a7a, type: 3}
       propertyPath: item.SpriteUIFilename
@@ -13922,6 +13954,14 @@ PrefabInstance:
       value: Sickle
       objectReference: {fileID: 0}
     - target: {fileID: 4902443269711366312, guid: ed11f61c5143f4844856ebe2ccb22a7a, type: 3}
+      propertyPath: item.sprite
+      value: Items/Sickle/Sickle
+      objectReference: {fileID: 0}
+    - target: {fileID: 4902443269711366312, guid: ed11f61c5143f4844856ebe2ccb22a7a, type: 3}
+      propertyPath: item.useAnimation
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4902443269711366312, guid: ed11f61c5143f4844856ebe2ccb22a7a, type: 3}
       propertyPath: item.SpriteUIFilename
       value: Items/Sickle/Sickle
       objectReference: {fileID: 0}
@@ -14024,7 +14064,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1569106561, guid: daad379e1ad3fb2439e88dfa59df37ac, type: 3}
       propertyPath: m_WasSpriteAssigned
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1574904242, guid: daad379e1ad3fb2439e88dfa59df37ac, type: 3}
       propertyPath: grid
@@ -14088,3 +14128,8 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: daad379e1ad3fb2439e88dfa59df37ac, type: 3}
+--- !u!95 &8296479765051929318 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 1569106560, guid: daad379e1ad3fb2439e88dfa59df37ac, type: 3}
+  m_PrefabInstance: {fileID: 8296479765051929317}
+  m_PrefabAsset: {fileID: 0}

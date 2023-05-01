@@ -6,14 +6,7 @@ using UnityEngine;
 public class PlayerAnimator : MonoBehaviour
 {
     public Animator playerCharacterAnimator;
-    public Animator toolAnimator;
-    Item.UseAnimation animationType;
-
-    private void Awake()
-    {
-        Inventory.OnActiveItemChangeFromPickup += Inventory_OnActiveItemChangeFromPickup;
-        Inventory.OnActiveItemChangeFromUnequip += Inventory_OnActiveItemChangeFromUnequip;
-    }
+    public ItemUseAnimation toolAnimator;
 
     public void UpdateVelocity(Vector3 velocity)
     {
@@ -30,24 +23,7 @@ public class PlayerAnimator : MonoBehaviour
 
     internal void UseTool(Vector3 lastDirection)
     {
-        if(animationType == Item.UseAnimation.NONE)
-            return;
-
         playerCharacterAnimator.SetTrigger("attack");
-
-        toolAnimator.SetFloat("velx", lastDirection.x);
-        toolAnimator.SetFloat("vely", lastDirection.y);
-        toolAnimator.SetTrigger("attack");
-    }
-
-    private void Inventory_OnActiveItemChangeFromPickup(Item item)
-    {
-        //toolAnimator.sprite = item.spriteLoaded:
-        animationType = item.useAnimation;
-    }
-
-    private void Inventory_OnActiveItemChangeFromUnequip()
-    {
-        animationType = Item.UseAnimation.NONE;
+        toolAnimator.StartAnimation(lastDirection);
     }
 }

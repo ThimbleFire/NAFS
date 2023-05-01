@@ -12,7 +12,7 @@ public class Cursor : MonoBehaviour
     private void Awake()
     {
         PlayerMove.OnTileChange += PlayerMove_OnTileChange;
-        PlayerMove.OnDirectionChange += PlayerMove_OnDirectionChange; ;
+        PlayerMove.OnDirectionChange += PlayerMove_OnDirectionChange;
 
         renderer = GetComponent<SpriteRenderer>();
     }
