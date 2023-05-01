@@ -24,6 +24,5 @@ public class Item
     public string Name = string.Empty;
     public Type ItemType = Item.Type.TOOL;
     public UseAnimation animation = Item.UseAnimation.NONE;
-    public string SpriteUIFilename = string.Empty;
-    public string animationControllerOverrideFileName = string.Empty;
+    public string sprite = string.Empty;
 }
