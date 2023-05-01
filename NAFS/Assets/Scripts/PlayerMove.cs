@@ -46,7 +46,7 @@ public class PlayerMove : MonoBehaviour
         }
 
         Vector3 direction = velocity.normalized;
-
+        
         transform.Translate(velocity);
         pAnimator.UpdateVelocity(direction);
 
