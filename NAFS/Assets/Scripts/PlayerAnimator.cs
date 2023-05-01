@@ -40,9 +40,10 @@ public class PlayerAnimator : MonoBehaviour
         toolAnimator.SetTrigger("attack");
     }
 
-    private void Inventory_OnActiveItemChangeFromPickup(Item.UseAnimation useAnimation)
+    private void Inventory_OnActiveItemChangeFromPickup(Item item)
     {
-        animationType = useAnimation;
+        //toolAnimator.sprite = item.spriteLoaded:
+        animationType = item.useAnimation;
     }
 
     private void Inventory_OnActiveItemChangeFromUnequip()
