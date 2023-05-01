@@ -18,6 +18,8 @@ public class ItemMono : MonoBehaviour
     public void Setup()
     {
         image = GetComponent<Image>();
-        image.sprite = Resources.Load<Sprite>(item.SpriteUIFilename);
+
+        item.spriteLoaded = Resources.Load<Sprite>(item.sprite);
+        image.sprite = item.spriteLoaded;
     }
 }
