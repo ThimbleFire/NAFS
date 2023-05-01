@@ -13,8 +13,17 @@ public class Item
         SEED
     }
 
+    public enum UseAnimation
+    {
+        NONE,
+        SLASH,
+        STAB,
+        OVERHEAD_SWING
+    }
+
     public string Name = string.Empty;
     public Type ItemType = Item.Type.TOOL;
+    public UseAnimation animation = Item.UseAnimation.NONE;
     public string SpriteUIFilename = string.Empty;
     public string animationControllerOverrideFileName = string.Empty;
 }
