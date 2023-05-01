@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class Inventory : MonoBehaviour
 {
-    public delegate void OnActiveItemChangeFromPickupHandler(string animation);
+    public delegate void OnActiveItemChangeFromPickupHandler(Item item);
     public static event OnActiveItemChangeFromPickupHandler OnActiveItemChangeFromPickup;
 
     public delegate void OnActiveItemChangeUnequipHandler();
@@ -35,7 +35,7 @@ public class Inventory : MonoBehaviour
         iMono.Setup();
 
         if (nextAvailableSlot == activeSlot)
-            OnActiveItemChangeFromPickup?.Invoke(itemMono.item.animationControllerOverrideFileName);
+            OnActiveItemChangeFromPickup?.Invoke(itemMono.item);
     }
 
     public static byte GetEmptySlot()
@@ -90,7 +90,7 @@ public class Inventory : MonoBehaviour
         }
 
         if (slot[index].GetChild(0).TryGetComponent<ItemMono>(out ItemMono itemMono)) {
-            OnActiveItemChangeFromPickup?.Invoke(itemMono.item.animationControllerOverrideFileName);
+            OnActiveItemChangeFromPickup?.Invoke(itemMono.item);
         }
     }
 }

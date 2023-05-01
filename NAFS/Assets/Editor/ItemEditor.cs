@@ -39,9 +39,9 @@ public class ItemEditor : EditorBase
                         (int)activeItem.ItemType, 
                         "Item Type");
 
-                    activeItem.animation = (Item.UseAnimation)PaintPopup(
+                    activeItem.useAnimation = (Item.UseAnimation)PaintPopup(
                         Helper.ItemAnimationNames, 
-                        (int)activeItem.animation, 
+                        (int)activeItem.useAnimation, 
                         "Animation Type");
 
             PaintSpriteField(ref sprite);
@@ -72,7 +72,7 @@ public class ItemEditor : EditorBase
         string filePath = string.Empty;
 
         // UI Sprite
-        if (SpriteUI != null)
+        if (sprite != null)
         {
             filePath = AssetDatabase.GetAssetPath(sprite).Substring(S_RESOURCE_DIR_LENGTH);
             filePath = filePath.Substring(0, filePath.Length - S_PNG_EXTENSION_LENGTH);

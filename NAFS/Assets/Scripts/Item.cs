@@ -23,8 +23,8 @@ public class Item
 
     public string Name = string.Empty;
     public Type ItemType = Item.Type.TOOL;
-    public UseAnimation animation = Item.UseAnimation.NONE;
+    public UseAnimation useAnimation = Item.UseAnimation.NONE;
     public string sprite = string.Empty;
-    [NonSerializable]
-    public Sprite spriteLoaded;
+    [NonSerialized]
+    public UnityEngine.Sprite spriteLoaded;
 }
