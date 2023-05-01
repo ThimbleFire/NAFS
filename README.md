@@ -16,8 +16,9 @@
 - [x] Add: pickup
 ![attack2](https://user-images.githubusercontent.com/14812476/235312566-dc17252b-f5f3-47f7-bc32-e1dad7c4b735.gif)
 - [x] Add: change active inventory slot item
-- [ ] Improve: replace animation files with one animation
+- [x] Improve: replace animation files with one animation
       per attack style, then swap weapon sprites in 2d renderer
+![animDemo](https://user-images.githubusercontent.com/14812476/235420772-17086968-d933-43c3-befa-90d0238fbcc0.gif)
 - [ ] Add: digging
 - [ ] Add: sowing
 - [ ] Add: day & night, clock
