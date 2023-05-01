@@ -23,7 +23,12 @@
 
 ![attack2](https://user-images.githubusercontent.com/14812476/235312566-dc17252b-f5f3-47f7-bc32-e1dad7c4b735.gif)
 
-- [ ] change active inventory slot item
+- [x] change active inventory slot item
+- [ ] replace item animations with 3 animations, 
+      the type is specified by the item file. 
+      None, Stab, Slash and overheadSwing. 
+      Then just replace the sprite in the animation 
+      to the active tool.
 - [ ] digging
 - [ ] sowing
 - [ ] day & night, clock
