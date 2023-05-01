@@ -19,7 +19,8 @@
 - [x] Improve: replace animation files with one animation
       per attack style, then swap weapon sprites in 2d renderer
 ![animDemo](https://user-images.githubusercontent.com/14812476/235420772-17086968-d933-43c3-befa-90d0238fbcc0.gif)
-- [ ] Add: digging
+- [x] Add: digging
+![digDemo](https://user-images.githubusercontent.com/14812476/235429649-434cb96c-bd02-43b9-8666-8092be3a4725.gif)
 - [ ] Add: sowing
 - [ ] Add: day & night, clock
 - [ ] Add: growing
