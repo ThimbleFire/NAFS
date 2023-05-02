@@ -32,6 +32,7 @@ public class Cursor : MonoBehaviour
 
         Position = grid.WorldToCell(cursorWorldPosition);
         cursorWorldPosition = Position / 0.16f;
+        cursorWorldPosition = Mathf.Round( ( Position / 0.16f ) * 100.0f) * 0.01f;
 
         transform.position = cursorWorldPosition + tileCenterOffset;
     }
