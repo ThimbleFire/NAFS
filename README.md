@@ -32,8 +32,11 @@
 
 ![digDemo](https://user-images.githubusercontent.com/14812476/235429649-434cb96c-bd02-43b9-8666-8092be3a4725.gif)
 
+- [x] Add: tilling
+
+![till demo](https://user-images.githubusercontent.com/14812476/235613767-c9784314-29b1-4d2e-b87b-85a7e4356994.gif)
+
 - [ ] Add: mobile joystick & btn(s)
-- [ ] Add: tilling
 - [ ] Add: sowing
 - [ ] Add: day & night, clock
 - [ ] Add: growing
