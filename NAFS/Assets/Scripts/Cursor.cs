@@ -27,16 +27,17 @@ public class Cursor : MonoBehaviour
 
     private void PlayerMove_OnDirectionChange(Vector3 direction)
     {
-        Vector3 worldPosition = PlayerCharacter.WorldPosition + direction * 0.16f;
+        Vector3 tileCenterOffset = Vector3.One * 0.08f;
+        Vector3 cursorWorldPosition = PlayerCharacter.WorldPosition + direction * 0.16f;
 
-        Position = grid.WorldToCell(worldPosition);
+        Position = grid.WorldToCell(cursorWorldPosition);
+        cursorWorldPosition = Position / 0.16f;
 
-        Vector3 tileCenterOffset = new Vector3(0.08f, 0.08f);
-        transform.position = worldPosition + tileCenterOffset;
+        transform.position = cursorWorldPosition + tileCenterOffset;
     }
     private void PlayerMove_OnTileChange(Vector3Int newTile)
     {
-        Vector3 tileCenterOffset = new Vector3(0.08f, 0.08f);
+        Vector3 tileCenterOffset = Vector3.One * 0.08f;
 
         Vector3Int dir = newTile - lastTile;
 
