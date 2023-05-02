@@ -6,6 +6,8 @@ using UnityEngine.Tilemaps;
 
 public class Cursor : MonoBehaviour
 {
+    private readonly Vector3 tileCenterOffset = Vector3.one * Tile.HalfSize;
+
     public static Tilemap tilemapGrass;
     public static Tilemap tileMapDirt;
 
@@ -25,23 +27,18 @@ public class Cursor : MonoBehaviour
         renderer = GetComponent<SpriteRenderer>();
     }
 
-    private void PlayerMove_OnDirectionChange(Vector3 direction)
-    {
-        Vector3 tileCenterOffset = Vector3.One * 0.08f;
-        Vector3 cursorWorldPosition = PlayerCharacter.WorldPosition + direction * 0.16f;
-
-        Position = grid.WorldToCell(cursorWorldPosition);
-        cursorWorldPosition = Position / 0.16f;
-        cursorWorldPosition = Mathf.Round( ( Position / 0.16f ) * 100.0f) * 0.01f;
-
+    /// Update the cursor position when changing direction on the same tile
+    private void PlayerMove_OnDirectionChange(Vector3 movementDirection) {
+        Vector3 cursorWorldPosition = PlayerCharacter.WorldPosition + movementDirection * Tile.Size;
+        cursorWorldPosition = new Vector3(
+            Mathf.Floor(cursorWorldPosition.x / Tile.Size) * Tile.Size, 
+            Mathf.Floor(cursorWorldPosition.y / Tile.Size) * Tile.Size);
         transform.position = cursorWorldPosition + tileCenterOffset;
     }
-    private void PlayerMove_OnTileChange(Vector3Int newTile)
-    {
-        Vector3 tileCenterOffset = Vector3.One * 0.08f;
 
+    /// Update the cursor position when changing tile
+    private void PlayerMove_OnTileChange(Vector3Int newTile) {
         Vector3Int dir = newTile - lastTile;
-
         Position = newTile + dir;
         transform.position = grid.CellToWorld(Position) + tileCenterOffset;
         lastTile = newTile;
