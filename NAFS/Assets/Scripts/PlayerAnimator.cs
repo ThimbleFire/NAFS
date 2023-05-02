@@ -21,12 +21,12 @@ public class PlayerAnimator : MonoBehaviour
         playerCharacterAnimator.SetFloat("vely", velocity.y);
     }
 
-    internal void UseTool(Vector3 lastDirection)
+    public Item.Behaviour UseTool(Vector3 lastDirection)
     {
         if (toolAnimator.InMotion)
-            return;
+            return Item.Behaviour.NONE;
 
         playerCharacterAnimator.SetTrigger("attack");
-        toolAnimator.StartAnimation(lastDirection);
+        return toolAnimator.StartAnimation(lastDirection);
     }
 }

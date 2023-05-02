@@ -3,5 +3,6 @@
   <Name>Sickle</Name>
   <ItemType>TOOL</ItemType>
   <useAnimation>SLASH</useAnimation>
+  <behaviour>DAMAGE</behaviour>
   <sprite>Items/Sickle/Sickle</sprite>
 </Item>

@@ -34,15 +34,18 @@ public class ItemEditor : EditorBase
 
             PaintTextField(ref activeItem.Name, "Item Name");
 
-                    activeItem.ItemType = (Item.Type)PaintPopup(
-                        Helper.ItemTypeNames, 
-                        (int)activeItem.ItemType, 
-                        "Item Type");
-
-                    activeItem.useAnimation = (Item.UseAnimation)PaintPopup(
-                        Helper.ItemAnimationNames, 
-                        (int)activeItem.useAnimation, 
-                        "Animation Type");
+            activeItem.ItemType = (Item.Type)PaintPopup(
+                Helper.ItemTypeNames,
+                (int)activeItem.ItemType,
+                "Item Type");
+            activeItem.useAnimation = (Item.UseAnimation)PaintPopup(
+                Helper.ItemAnimationNames,
+                (int)activeItem.useAnimation,
+                "Animation Type");
+            activeItem.behaviour = (Item.Behaviour)PaintPopup(
+                Helper.ItemBehaviourNames,
+                (int)activeItem.behaviour,
+                "Behaviour Type");
 
             PaintSpriteField(ref sprite);
         }

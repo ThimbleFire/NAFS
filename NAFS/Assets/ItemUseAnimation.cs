@@ -7,6 +7,7 @@ public class ItemUseAnimation : MonoBehaviour
     public SpriteRenderer renderer;
     public Animator animator;
     public Item.UseAnimation animationType;
+    public Item.Behaviour itemBehaviour;
     public bool InMotion { get; set; } = false;
 
     public void Awake()
@@ -16,10 +17,10 @@ public class ItemUseAnimation : MonoBehaviour
 
         renderer.enabled = false;
     }
-    public void StartAnimation(Vector3 lastDirection)
+    public Item.Behaviour StartAnimation(Vector3 lastDirection)
     {
         if (animationType == Item.UseAnimation.NONE)
-            return;
+            return Item.Behaviour.NONE;
 
         InMotion = true;
         renderer.enabled = true;
@@ -27,17 +28,7 @@ public class ItemUseAnimation : MonoBehaviour
         animator.SetFloat("vely", lastDirection.y);
         animator.SetTrigger(animationType.ToString());
 
-        switch (animationType)
-        {
-            case Item.UseAnimation.NONE:
-            case Item.UseAnimation.SLASH:
-            case Item.UseAnimation.STAB:
-            case Item.UseAnimation.OVERHEAD_SWING:
-                break;
-            case Item.UseAnimation.DIG:
-                Cursor.RemoveGrass();
-                break;
-        }
+        return itemBehaviour;
     }
 
     public void EndAnimation()
@@ -50,6 +41,7 @@ public class ItemUseAnimation : MonoBehaviour
     {
         renderer.sprite = item.spriteLoaded;
         animationType = item.useAnimation;
+        itemBehaviour = item.behaviour;
     }
 
     private void Inventory_OnActiveItemChangeFromUnequip()

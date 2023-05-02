@@ -1,8 +1,8 @@
 <?xml version="1.0"?>
 <Item xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-  <Name>Spade</Name>
+  <Name>Hoe</Name>
   <ItemType>TOOL</ItemType>
   <useAnimation>DIG</useAnimation>
-  <behaviour>DIG_GRASS</behaviour>
-  <sprite>Items/Spade/Spade</sprite>
+  <behaviour>TILL_EARTH</behaviour>
+  <sprite>Items/Hoe/Hoe</sprite>
 </Item>

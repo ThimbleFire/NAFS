@@ -14,14 +14,16 @@ public class PlayerMove : MonoBehaviour
     public delegate void OnMoveHandler(Vector3 position);
     public static event OnMoveHandler OnMove;
 
-    public float walkSpeed = 1.0f;
     public PlayerAnimator pAnimator;
     public Grid grid;
-    public Vector3Int OnTile { get { return grid.WorldToCell(transform.position); } }
+    public Terrain terrain;
 
+    private float walkSpeed = 1.0f;
     private Vector3Int lastTile = Vector3Int.zero;
     private Vector3 lastDirection = Vector3.down;
     private Vector3 lastPosition;
+
+    public Vector3Int OnTile { get { return grid.WorldToCell(transform.position); } }
 
     private void Awake() => lastPosition = transform.position;
 
@@ -41,8 +43,16 @@ public class PlayerMove : MonoBehaviour
         if (Input.GetKey(KeyCode.S)) {
             velocity += Time.smoothDeltaTime * walkSpeed * Vector3.down;
         }
+
         if (Input.GetKeyDown(KeyCode.F)) {
-            pAnimator.UseTool(lastDirection);
+            var resultingItemBehaviour = pAnimator.UseTool(lastDirection);
+
+            if (resultingItemBehaviour == Item.Behaviour.NONE)
+                return;
+            else
+            {
+                Action(resultingItemBehaviour);
+            }
         }
 
         Vector3 direction = velocity.normalized;
@@ -67,6 +77,24 @@ public class PlayerMove : MonoBehaviour
             OnMove?.Invoke(transform.position);
             lastPosition = transform.position;
             PlayerCharacter.WorldPosition = transform.position;
+        }
+    }
+
+    private void Action(Item.Behaviour resultingItemBehaviour)
+    {
+        switch (resultingItemBehaviour)
+        {
+            case Item.Behaviour.NONE:
+            case Item.Behaviour.DAMAGE:
+            case Item.Behaviour.MINE:
+            case Item.Behaviour.CHOP_TREE:
+                break;
+            case Item.Behaviour.DIG_GRASS:
+                terrain.RemoveGrass();
+                break;
+            case Item.Behaviour.TILL_EARTH:
+                terrain.Till();
+                break;
         }
     }
 }

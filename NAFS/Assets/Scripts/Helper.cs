@@ -32,4 +32,13 @@ public class Helper
             "Overhead Swing",
             "Dig"
     };
+    public static string[] ItemBehaviourNames = new string[6]
+    {
+            "None",
+            "Damage",
+            "Mine",
+            "Chop Tree",
+            "Dig Grass",
+            "Till Earth"
+    };
 }

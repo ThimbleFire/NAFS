@@ -22,9 +22,20 @@ public class Item
         DIG
     }
 
+    public enum Behaviour
+    {
+        NONE,
+        DAMAGE,
+        MINE,
+        CHOP_TREE,
+        DIG_GRASS,
+        TILL_EARTH
+    };
+
     public string Name = string.Empty;
     public Type ItemType = Item.Type.TOOL;
     public UseAnimation useAnimation = Item.UseAnimation.NONE;
+    public Behaviour behaviour = Behaviour.NONE;
     public string sprite = string.Empty;
     [NonSerialized]
     public UnityEngine.Sprite spriteLoaded;
