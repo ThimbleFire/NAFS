@@ -38,10 +38,12 @@
 
 - [ ] Add: mobile joystick & btn(s)
 - [ ] Add: sowing
-- [ ] Add: day & night, clock
+- [ ] Add: system clock
 - [ ] Add: growing
+- [ ] Add: mobile system notification on crops grown
 - [ ] Add: harvesting
 - [ ] Add: destroyable foilage
+- [ ] Add: character editor
 - [ ] Add: friendly npc
 - [ ] Add: dialog
 - [ ] Add: selling
@@ -49,10 +51,12 @@
 - [ ] Add: saving
 - [ ] Add: loading
 - [ ] Add: house
+- [ ] Add: collision 
 - [ ] Add: mining
+- [ ] Add: woodcutting
 - [ ] Add: NPC town
 - [ ] Add: NPC agency
            Performing jobs & activities,
            and sleeping at night
-- [ ] Add: Character creation and customisation 
+- [ ] Add: character creation and customisation 
 - [ ] Add: stamina, health, and eating
