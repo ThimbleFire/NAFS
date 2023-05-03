@@ -24,21 +24,23 @@ public class Helper
             "Seed",
     };
 
-    public static string[] ItemAnimationNames = new string[5]
+    public static string[] ItemAnimationNames = new string[6]
     {
             "None",
+            "Empty",
             "Slash",
             "Stab",
             "Overhead Swing",
             "Dig"
     };
-    public static string[] ItemBehaviourNames = new string[6]
+    public static string[] ItemBehaviourNames = new string[7]
     {
             "None",
             "Damage",
             "Mine",
             "Chop Tree",
             "Dig Grass",
-            "Till Earth"
+            "Till Earth",
+            "Sow"
     };
 }
