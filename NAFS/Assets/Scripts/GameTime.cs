@@ -12,26 +12,30 @@ using UnityEngine;
 public class GameTime : MonoBehaviour
 
 {
+    public delegate void OnTickHandler();
+    public static event OnTickHandler OnTck;
 
-private static float timer = 0.0f;
-private float interval = 6.0f
 
-private static active = false;
+
+    private static float timer = 0.0f;
+    private float interval = 6.0f
+
+    private static active = false;
 
 public static void Start() =>
-{
+
     active = true;
-}
+
 
 public static void Stop() =>
-{
+
     active = false;
-}
+
 
 public static void Reset() =>
-{
+
     timer = 0.0f
-}
+
 
 public void Update()
 {
