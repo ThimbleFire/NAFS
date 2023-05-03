@@ -16,6 +16,7 @@ public class Item
     public enum UseAnimation
     {
         NONE,
+        EMPTY,
         SLASH,
         STAB,
         OVERHEAD_SWING,
@@ -29,7 +30,8 @@ public class Item
         MINE,
         CHOP_TREE,
         DIG_GRASS,
-        TILL_EARTH
+        TILL_EARTH,
+        SOW
     };
 
     public string Name = string.Empty;
