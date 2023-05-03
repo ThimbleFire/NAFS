@@ -40,6 +40,7 @@
 - [ ] Add: sowing
 - [ ] Add: system clock
 - [ ] Add: growing
+- [ ] Add: adjust player render layer when changing tile Y axis
 - [ ] Add: mobile system notification on crops grown
 - [ ] Add: harvesting
 - [ ] Add: destroyable foilage
