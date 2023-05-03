@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Tilemaps;
 
+[RequireComponent(typeof(SpriteRenderer))]
 public class Cursor : MonoBehaviour
 {
     private readonly Vector3 tileCenterOffset = Vector3.one * Tile.HalfSize;

@@ -67,11 +67,10 @@ public class Inventory : MonoBehaviour
     public static void CopyClassValues(ItemMono source, ItemMono target)
     {
         FieldInfo[] sourceFields = source.GetType().GetFields(BindingFlags.Public |
-                                                         BindingFlags.NonPublic |
-                                                         BindingFlags.Instance);
-        int i = 0;
-        for (i = 0; i < sourceFields.Length; i++)
-        {
+                                                                        BindingFlags.NonPublic |
+                                                                        BindingFlags.Instance);
+        for (int i = 0; i < sourceFields.Length; i++) {
+
             var value = sourceFields[i].GetValue(source);
             sourceFields[i].SetValue(target, value);
         }

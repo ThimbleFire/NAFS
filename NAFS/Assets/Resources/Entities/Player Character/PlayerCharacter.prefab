@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 1569106559}
   - component: {fileID: 1569106560}
   - component: {fileID: 1569106561}
+  - component: {fileID: 194783058}
   m_Layer: 0
   m_Name: tool animation
   m_TagString: Untagged
@@ -42,7 +43,7 @@ Animator:
   m_GameObject: {fileID: 1569106558}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 67fc9a8a3d1d58b4b8c16a97da9f8506, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -91,18 +92,34 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 3
+  m_SortingOrder: 4
   m_Sprite: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 0.16, y: 0.16}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &194783058
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1569106558}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c9e10b61394ed294382c345f73f5f7bc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  renderer: {fileID: 1569106561}
+  animator: {fileID: 1569106560}
+  animationType: 0
+  itemBehaviour: 0
 --- !u!1 &2284931448488572102
 GameObject:
   m_ObjectHideFlags: 0
@@ -112,11 +129,12 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2331047471585377398}
-  - component: {fileID: 1574904242}
   - component: {fileID: 733140196682348192}
-  - component: {fileID: 5783049592557860914}
   - component: {fileID: -5823287050611321140}
   - component: {fileID: 1832378585}
+  - component: {fileID: 1574904242}
+  - component: {fileID: 5783049592557860914}
+  - component: {fileID: 8296479765051929320}
   m_Layer: 0
   m_Name: PlayerCharacter
   m_TagString: Untagged
@@ -139,21 +157,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1574904242
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2284931448488572102}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 865316496dd8d9047a0dd8bc40c3e80b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  walkSpeed: 1
-  pAnimator: {fileID: 5783049592557860914}
-  grid: {fileID: 0}
 --- !u!95 &733140196682348192
 Animator:
   serializedVersion: 3
@@ -173,20 +176,6 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &5783049592557860914
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2284931448488572102}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9858cdcffb5b3cd4d929adf7384d5095, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  playerCharacterAnimator: {fileID: 733140196682348192}
-  toolAnimator: {fileID: 1569106560}
 --- !u!212 &-5823287050611321140
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -249,5 +238,46 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e4820166dfb737145845aa3867614e90, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1574904242
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2284931448488572102}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 865316496dd8d9047a0dd8bc40c3e80b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pAnimator: {fileID: 5783049592557860914}
+  grid: {fileID: 0}
+  terrain: {fileID: 0}
+--- !u!114 &5783049592557860914
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2284931448488572102}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9858cdcffb5b3cd4d929adf7384d5095, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerCharacterAnimator: {fileID: 733140196682348192}
+  toolAnimator: {fileID: 194783058}
+--- !u!114 &8296479765051929320
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2284931448488572102}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 460754d3435d76743a3ddcd30a6bb835, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 

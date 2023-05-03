@@ -10,46 +10,29 @@ using UnityEngine;
 */
 
 public class GameTime : MonoBehaviour
-
 {
     public delegate void OnTickHandler();
     public static event OnTickHandler OnTck;
 
-
-
     private static float timer = 0.0f;
-    private float interval = 6.0f
+    private readonly float interval = 5.0f;
 
-    private static active = false;
+    private static bool active = false;
 
-public static void Start() =>
+    public static void ClockStart() => active = true;
+    public static void ClockStop() => active = false;
+    public static void ClockReset() => timer = 0.0f;
 
-    active = true;
+    public void Update() {
 
+        if (active == false)
+            return;
 
-public static void Stop() =>
+        timer += Time.deltaTime;
 
-    active = false;
-
-
-public static void Reset() =>
-
-    timer = 0.0f
-
-
-public void Update()
-{
-    if (active == false)
-        return;
-
-    timer += Time.SmoothDeltaTime;
-    
-    if(timer >= interval)
-    {
-        timer -= interval;
-        
-        Tick?.Invoke();
+        if (timer >= interval) {
+            timer -= interval;
+            OnTck?.Invoke();
+        }
     }
-}
-
 }

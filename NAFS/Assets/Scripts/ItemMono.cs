@@ -8,13 +8,6 @@ public class ItemMono : MonoBehaviour
     public Item item;
     public Image image = null;
 
-    //private void Awake()
-    //{
-    //    if(TryGetComponent<pickup>(out pickup p))
-    //    {
-    //    }
-    //}
-
     public void Setup()
     {
         image = GetComponent<Image>();

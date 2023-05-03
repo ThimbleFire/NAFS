@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
+[RequireComponent(typeof(PlayerAnimator))]
 public class PlayerMove : MonoBehaviour
 {
     public delegate void OnTileChangeHandler(Vector3Int tilePosition);
@@ -14,38 +15,38 @@ public class PlayerMove : MonoBehaviour
     public delegate void OnMoveHandler(Vector3 position);
     public static event OnMoveHandler OnMove;
 
-    public PlayerAnimator pAnimator;
-    public Grid grid;
+    public PlayerAnimator playerAnimator;
     public Terrain terrain;
+    public Grid grid;
 
-    private float walkSpeed = 1.0f;
-    private Vector3Int lastTile = Vector3Int.zero;
-    private Vector3 lastDirection = Vector3.down;
-    private Vector3 lastPosition;
+    private float WalkSpeed { get; set; } = 1.0f;
+    private Vector3Int LastTile { get; set; } = Vector3Int.zero;
+    private Vector3 LastDirection { get; set; } = Vector3.down;
+    private Vector3 LastPosition { get; set; }
 
     public Vector3Int OnTile { get { return grid.WorldToCell(transform.position); } }
 
-    private void Awake() => lastPosition = transform.position;
+    private void Awake() => LastPosition = transform.position;
 
     private void Update()
     {
         Vector3 velocity = Vector3.zero;
 
         if (Input.GetKey(KeyCode.A)) {
-            velocity += Time.smoothDeltaTime * walkSpeed * Vector3.left;
+            velocity += Time.smoothDeltaTime * WalkSpeed * Vector3.left;
         }
         if (Input.GetKey(KeyCode.D)) {
-            velocity += Time.smoothDeltaTime * walkSpeed * Vector3.right;
+            velocity += Time.smoothDeltaTime * WalkSpeed * Vector3.right;
         }
         if (Input.GetKey(KeyCode.W)) {
-            velocity += Time.smoothDeltaTime * walkSpeed * Vector3.up;
+            velocity += Time.smoothDeltaTime * WalkSpeed * Vector3.up;
         }
         if (Input.GetKey(KeyCode.S)) {
-            velocity += Time.smoothDeltaTime * walkSpeed * Vector3.down;
+            velocity += Time.smoothDeltaTime * WalkSpeed * Vector3.down;
         }
 
         if (Input.GetKeyDown(KeyCode.F)) {
-            var resultingItemBehaviour = pAnimator.UseTool(lastDirection);
+            var resultingItemBehaviour = playerAnimator.UseTool(LastDirection);
 
             if (resultingItemBehaviour == Item.Behaviour.NONE)
                 return;
@@ -58,24 +59,24 @@ public class PlayerMove : MonoBehaviour
         Vector3 direction = velocity.normalized;
         
         transform.Translate(velocity);
-        pAnimator.UpdateVelocity(direction);
+        playerAnimator.UpdateVelocity(direction);
 
         // OnDirectionChange
-        if (lastDirection != direction && direction != Vector3.zero ) {
+        if (LastDirection != direction && direction != Vector3.zero ) {
             OnDirectionChange?.Invoke(direction);
-            lastDirection = direction;
+            LastDirection = direction;
         }
 
         // OnTileChange
-        if(lastTile != OnTile) {
+        if(LastTile != OnTile) {
             OnTileChange?.Invoke(OnTile);
-            lastTile = OnTile;
+            LastTile = OnTile;
         }
 
         // OnMove
-        if(lastPosition != transform.position) {
+        if(LastPosition != transform.position) {
             OnMove?.Invoke(transform.position);
-            lastPosition = transform.position;
+            LastPosition = transform.position;
             PlayerCharacter.WorldPosition = transform.position;
         }
     }
