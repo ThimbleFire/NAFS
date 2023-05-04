@@ -21,7 +21,7 @@ public class ItemUseAnimation : MonoBehaviour
     public Item.Behaviour StartAnimation(Vector3 lastDirection)
     {
         if (AnimationType == Item.UseAnimation.NONE)
-            return Item.Behaviour.NONE;
+            return ItemBehaviour;
 
         InMotion = true;
         renderer.enabled = true;
@@ -43,6 +43,7 @@ public class ItemUseAnimation : MonoBehaviour
         renderer.sprite = item.spriteLoaded;
         AnimationType = item.useAnimation;
         ItemBehaviour = item.behaviour;
+        gameObject.name = item.Name;
     }
 
     private void Inventory_OnActiveItemChangeFromUnequip()

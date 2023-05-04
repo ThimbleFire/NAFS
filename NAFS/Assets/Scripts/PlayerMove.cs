@@ -96,6 +96,9 @@ public class PlayerMove : MonoBehaviour
             case Item.Behaviour.TILL_EARTH:
                 terrain.Till();
                 break;
+            case Item.Behaviour.SOW:
+                terrain.Sow();
+                break;
         }
     }
 }

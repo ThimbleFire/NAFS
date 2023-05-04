@@ -12,7 +12,6 @@ public class Item
         FOOD,
         SEED
     }
-
     public enum UseAnimation
     {
         NONE,
@@ -22,7 +21,6 @@ public class Item
         OVERHEAD_SWING,
         DIG
     }
-
     public enum Behaviour
     {
         NONE,
@@ -39,6 +37,7 @@ public class Item
     public UseAnimation useAnimation = Item.UseAnimation.NONE;
     public Behaviour behaviour = Behaviour.NONE;
     public string sprite = string.Empty;
+
     [NonSerialized]
     public UnityEngine.Sprite spriteLoaded;
 }

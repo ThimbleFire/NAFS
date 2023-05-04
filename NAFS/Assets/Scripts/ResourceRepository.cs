@@ -1,17 +1,18 @@
 using System;
+using System.Collections.Generic;
 using UnityEngine;
 
-public class ResourceRepository<GameObject> : MonoBehaviour
-
+public class ResourceRepository : MonoBehaviour
 {
-    public List<GameObject> resource;
+    public static Dictionary<string, Sprite[]> sprites = new Dictionary<string, Sprite[]>();
+    public static Dictionary<string, GameObject> prefab = new Dictionary<string, GameObject>();
 
-    public GameObject this[string i] =>
+    private void Awake()
+    {
+        DontDestroyOnLoad(this);
 
-   
+        sprites.Add("Strawberries", Resources.LoadAll<Sprite>("Environment/Seeds/strawberries"));
 
-      get { return resource.Find(x=>x.Name == i); }
-
-
-   
+        prefab.Add("Item", Resources.Load("UI/Item") as GameObject);
+    }
 }

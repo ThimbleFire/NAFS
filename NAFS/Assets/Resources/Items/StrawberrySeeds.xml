@@ -1,0 +1,8 @@
+<?xml version="1.0"?>
+<Item xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <Name>StrawberrySeeds</Name>
+  <ItemType>SEED</ItemType>
+  <useAnimation>NONE</useAnimation>
+  <behaviour>SOW</behaviour>
+  <sprite>Items/StrawberrySeeds/strawberry_seeds</sprite>
+</Item>

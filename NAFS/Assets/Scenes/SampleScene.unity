@@ -1114,6 +1114,99 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1001 &530279752
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4902443269711366308, guid: ed11f61c5143f4844856ebe2ccb22a7a, type: 3}
+      propertyPath: m_Name
+      value: StrawberrySeeds
+      objectReference: {fileID: 0}
+    - target: {fileID: 4902443269711366309, guid: ed11f61c5143f4844856ebe2ccb22a7a, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: e99ca15e935e2c2408fa3b0776b80561, type: 3}
+    - target: {fileID: 4902443269711366309, guid: ed11f61c5143f4844856ebe2ccb22a7a, type: 3}
+      propertyPath: m_WasSpriteAssigned
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4902443269711366312, guid: ed11f61c5143f4844856ebe2ccb22a7a, type: 3}
+      propertyPath: item.Name
+      value: StrawberrySeeds
+      objectReference: {fileID: 0}
+    - target: {fileID: 4902443269711366312, guid: ed11f61c5143f4844856ebe2ccb22a7a, type: 3}
+      propertyPath: item.sprite
+      value: Items/StrawberrySeeds/StrawberrySeeds
+      objectReference: {fileID: 0}
+    - target: {fileID: 4902443269711366312, guid: ed11f61c5143f4844856ebe2ccb22a7a, type: 3}
+      propertyPath: item.ItemType
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4902443269711366312, guid: ed11f61c5143f4844856ebe2ccb22a7a, type: 3}
+      propertyPath: item.behaviour
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 4902443269711366312, guid: ed11f61c5143f4844856ebe2ccb22a7a, type: 3}
+      propertyPath: item.useAnimation
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4902443269711366312, guid: ed11f61c5143f4844856ebe2ccb22a7a, type: 3}
+      propertyPath: item.SpriteUIFilename
+      value: Items/Spade/Spade
+      objectReference: {fileID: 0}
+    - target: {fileID: 4902443269711366312, guid: ed11f61c5143f4844856ebe2ccb22a7a, type: 3}
+      propertyPath: item.animationControllerOverrideFileName
+      value: Items/Spade/Spade
+      objectReference: {fileID: 0}
+    - target: {fileID: 4902443269711366314, guid: ed11f61c5143f4844856ebe2ccb22a7a, type: 3}
+      propertyPath: m_RootOrder
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 4902443269711366314, guid: ed11f61c5143f4844856ebe2ccb22a7a, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 1.221
+      objectReference: {fileID: 0}
+    - target: {fileID: 4902443269711366314, guid: ed11f61c5143f4844856ebe2ccb22a7a, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.067
+      objectReference: {fileID: 0}
+    - target: {fileID: 4902443269711366314, guid: ed11f61c5143f4844856ebe2ccb22a7a, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4902443269711366314, guid: ed11f61c5143f4844856ebe2ccb22a7a, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4902443269711366314, guid: ed11f61c5143f4844856ebe2ccb22a7a, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4902443269711366314, guid: ed11f61c5143f4844856ebe2ccb22a7a, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4902443269711366314, guid: ed11f61c5143f4844856ebe2ccb22a7a, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4902443269711366314, guid: ed11f61c5143f4844856ebe2ccb22a7a, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4902443269711366314, guid: ed11f61c5143f4844856ebe2ccb22a7a, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4902443269711366314, guid: ed11f61c5143f4844856ebe2ccb22a7a, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: ed11f61c5143f4844856ebe2ccb22a7a, type: 3}
 --- !u!1001 &813741031
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7924,12 +8017,29 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: daad379e1ad3fb2439e88dfa59df37ac, type: 3}
+--- !u!1 &8296479765051929318 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2284931448488572102, guid: daad379e1ad3fb2439e88dfa59df37ac, type: 3}
+  m_PrefabInstance: {fileID: 8296479765051929317}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &8296479765051929319
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8296479765051929318}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b2b943fff9fae8246bd795c13376e074, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &8296479765051929321 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 5783049592557860914, guid: daad379e1ad3fb2439e88dfa59df37ac, type: 3}
   m_PrefabInstance: {fileID: 8296479765051929317}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 8296479765051929318}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9858cdcffb5b3cd4d929adf7384d5095, type: 3}

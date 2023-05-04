@@ -11,14 +11,12 @@ public class Inventory : MonoBehaviour
     public delegate void OnActiveItemChangeUnequipHandler();
     public static event OnActiveItemChangeUnequipHandler OnActiveItemChangeFromUnequip;
 
-    public static GameObject itemPrefab;
     public static Transform[] slot;
     public static byte CountEmptySlots = 9;
     public static int activeSlot = 1;
 
     private void Awake()
     {
-        itemPrefab = Resources.Load("UI/Item") as GameObject;
         slot = GetComponentsInChildren<Transform>(true);
         CountEmptySlots = CountEmptySlot();
     }
@@ -30,7 +28,7 @@ public class Inventory : MonoBehaviour
         if (nextAvailableSlot >= slot.Length)
             return;
 
-        ItemMono iMono = Instantiate(itemPrefab, slot[nextAvailableSlot]).GetComponent<ItemMono>();
+        ItemMono iMono = Instantiate(ResourceRepository.prefab["Item"], slot[nextAvailableSlot]).GetComponent<ItemMono>();
         CopyClassValues(itemMono, iMono);
         iMono.Setup();
 
