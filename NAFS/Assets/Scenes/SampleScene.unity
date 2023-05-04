@@ -7165,6 +7165,7 @@ MonoBehaviour:
   grassLayer: {fileID: 1276955464}
   tileBaseTilledEarth: {fileID: 11400000, guid: d5fc61a68cac6cb449cdf6f506fc2540, type: 2}
   tileBaseDirt: {fileID: 11400000, guid: 34d906868718d5644ba32479c4628f4a, type: 2}
+  playerCharactersActiveTool: {fileID: 1701123713}
 --- !u!1001 &1311351822
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7529,6 +7530,11 @@ PrefabInstance:
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 561099269310759988, guid: 4122d2f2c3d5bfd49950fe9251b40f93, type: 3}
   m_PrefabInstance: {fileID: 1534570019}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1701123713 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1569106558, guid: daad379e1ad3fb2439e88dfa59df37ac, type: 3}
+  m_PrefabInstance: {fileID: 8296479765051929317}
   m_PrefabAsset: {fileID: 0}
 --- !u!224 &1820610120 stripped
 RectTransform:

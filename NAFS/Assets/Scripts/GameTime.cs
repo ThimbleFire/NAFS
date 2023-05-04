@@ -14,14 +14,19 @@ public class GameTime : MonoBehaviour
     public delegate void OnTickHandler();
     public static event OnTickHandler OnTck;
 
-    private static float timer = 0.0f;
-    private readonly float interval = 5.0f;
+    public float timer = 0.0f;
+    private readonly float interval = 60.0f * 5.0f;
 
     private static bool active = false;
 
     public static void ClockStart() => active = true;
     public static void ClockStop() => active = false;
-    public static void ClockReset() => timer = 0.0f;
+    //public static void ClockReset() => timer = 0.0f;
+
+    private void Awake()
+    {
+        ClockStart();
+    }
 
     public void Update() {
 

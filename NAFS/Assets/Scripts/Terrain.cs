@@ -26,7 +26,10 @@ public class Terrain : MonoBehaviour
     {
         //You need to make it so multiple game objects can't be placed on the same tile
 
-        if (grassLayer.GetTile(Cursor.Position).Equals(tileBaseTilledEarth))
-            Instantiate(ResourceRepository.prefab[playerCharactersActiveTool.name]);
+        if (grassLayer.GetTile(Cursor.Position).Equals(tileBaseTilledEarth)) {
+
+            CropMono seed = Instantiate(ResourceRepository.prefab["Seed"], grassLayer.CellToWorld(Cursor.Position), Quaternion.identity).GetComponent<CropMono>();
+            seed.Setup(playerCharactersActiveTool.name);
+        }
     }
 }

@@ -11,8 +11,9 @@ public class ResourceRepository : MonoBehaviour
     {
         DontDestroyOnLoad(this);
 
-        sprites.Add("Strawberries", Resources.LoadAll<Sprite>("Environment/Seeds/strawberries"));
+        sprites.Add("StrawberrySeeds", Resources.LoadAll<Sprite>("Environment/Seeds/strawberries"));
 
         prefab.Add("Item", Resources.Load("UI/Item") as GameObject);
+        prefab.Add("Seed", Resources.Load("Items/Seed") as GameObject);
     }
 }
