@@ -4,14 +4,14 @@ using UnityEngine;
 public class ResourceRepository<GameObject> : MonoBehaviour
 
 {
-    public GameObject[] resource;
+    public List<GameObject> resource;
 
-    public GameObject this[int i]
+    public GameObject this[string i] =>
 
-   {
+   
 
-      get { return resource[i]; }
+      get { return resource.Find(x=>x.Name == i); }
 
 
-   }
+   
 }
