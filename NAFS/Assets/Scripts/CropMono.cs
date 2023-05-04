@@ -19,7 +19,7 @@ class CropMono : MonoBehaviour
     
     private void GameTime_OnTick()
     {
-        if(GrowthStage >= GrowthStageMax)
+        if(GrowthStage >= sprites.Length)
             return;
             
         GrowthStage++;
