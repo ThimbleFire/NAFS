@@ -37,9 +37,9 @@
 ![till demo](https://user-images.githubusercontent.com/14812476/235613767-c9784314-29b1-4d2e-b87b-85a7e4356994.gif)
 
 - [ ] Add: mobile joystick & btn(s)
-- [ ] Add: sowing
-- [ ] Add: system clock
-- [ ] Add: growing
+- [x] Add: sowing
+- [x] Add: system clock
+- [x] Add: growing
 - [ ] Add: adjust player render layer when changing tile Y axis
 - [ ] Add: mobile system notification on crops grown
 - [ ] Add: harvesting
