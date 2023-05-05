@@ -40,6 +40,9 @@
 - [x] Add: sowing
 - [x] Add: system clock
 - [x] Add: growing
+
+![sow grow demo](https://user-images.githubusercontent.com/14812476/236571171-f05f59e4-a099-4773-9643-6c1f9014db93.gif)
+
 - [ ] Add: adjust player render layer when changing tile Y axis
 - [ ] Add: mobile system notification on crops grown
 - [ ] Add: harvesting
