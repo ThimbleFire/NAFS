@@ -29,7 +29,7 @@ public class pickup : MonoBehaviour
         if (pickupable == false)
             transform.position = Vector3.MoveTowards(transform.position, PlayerCharacter.WorldPosition, 0.001f);
 
-        if (Vector3.Distance(PlayerCharacter.WorldPosition, transform.position) <= 0.01f)
+        if (Vector3.Distance(PlayerCharacter.WorldPosition, transform.position) <= 0.008f)
         {
             Inventory.AddItem(itemMono);
             Destroy(gameObject);
