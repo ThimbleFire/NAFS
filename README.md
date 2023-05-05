@@ -45,6 +45,8 @@
 
 - [ ] Add: adjust player render layer when changing tile Y axis
 - [ ] Add: mobile system notification on crops grown
+- [ ] Add: Rigidbody2d components to tool and plants so we can detect collision
+- [ ] Add: on hit animation to wobble plants when stuck
 - [ ] Add: harvesting
 - [ ] Add: destroyable foilage
 - [ ] Add: character editor
