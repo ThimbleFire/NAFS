@@ -28,7 +28,7 @@ public class Terrain : MonoBehaviour
 
         if (grassLayer.GetTile(Cursor.Position).Equals(tileBaseTilledEarth)) {
         // note: the reason why game object is out of position is due to the sprite origin being centered.
-            CropMono seed = Instantiate(ResourceRepository.prefab["Seed"], grassLayer.CellToWorld(Cursor.Position), Quaternion.identity).GetComponent<CropMono>();
+            CropMono seed = Instantiate(ResourceRepository.prefab["Seed"], grassLayer.CellToWorld(Cursor.Position) + Vector3.one * Tile.HalfSize, Quaternion.identity).GetComponent<CropMono>();
             seed.Setup(playerCharactersActiveTool.name);
         }
     }

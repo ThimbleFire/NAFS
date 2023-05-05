@@ -1,6 +1,7 @@
 using System;
 using UnityEngine;
 
+[RequireComponent(typeof(BoxCollider2D))]
 [RequireComponent(typeof(SpriteRenderer))]
 class CropMono : MonoBehaviour
 {
@@ -20,30 +21,19 @@ class CropMono : MonoBehaviour
 
     private void GameTime_OnTck()
     {
-        if (GrowthStage >= sprites.Length)
-            return;
-
         renderer.sprite = sprites[GrowthStage++];
         Life = 2;
+
+        if (GrowthStage == sprites.Length)
+            GameTime.OnTck -= GameTime_OnTck;
     }
     
-    void OnCollisionEnter2D(Collision2D collision)
-
-    {
-
-        if (collision.gameObject.tag == "playertoolcollider)
-
-        {
-
+    void OnCollisionEnter2D(Collision2D collision) {
+        if (collision.gameObject.CompareTag("playertoolcollider")) {
             Life -= 1;
-            
-            if(Life <= 0)
-            {
+            if(Life <= 0) {
                 //distribute harvest
             }
-
         }
-
-    }
-    
+    }    
 }

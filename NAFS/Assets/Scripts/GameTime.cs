@@ -15,7 +15,7 @@ public class GameTime : MonoBehaviour
     public static event OnTickHandler OnTck;
 
     public float timer = 0.0f;
-    private readonly float interval = 60.0f * 5.0f;
+    private readonly float interval = /*60.0f * */5.0f;
 
     private static bool active = false;
 
