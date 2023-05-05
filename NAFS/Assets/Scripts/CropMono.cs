@@ -25,6 +25,25 @@ class CropMono : MonoBehaviour
 
         renderer.sprite = sprites[GrowthStage++];
         Life = 2;
-    }   
+    }
+    
+    void OnCollisionEnter2D(Collision2D collision)
+
+    {
+
+        if (collision.gameObject.tag == "playertoolcollider)
+
+        {
+
+            Life -= 1;
+            
+            if(Life <= 0)
+            {
+                //distribute harvest
+            }
+
+        }
+
+    }
     
 }
