@@ -9,7 +9,7 @@ public class PlayerMove : MonoBehaviour
     public delegate void OnTileChangeHandler(Vector3Int tilePosition);
     public static event OnTileChangeHandler OnTileChange;
 
-    public delegate void OnDirectionChangeHandler(Vector3 direction);
+    public delegate void OnDirectionChangeHandler();
     public static event OnDirectionChangeHandler OnDirectionChange;
 
     public delegate void OnMoveHandler(Vector3 position);
@@ -63,7 +63,7 @@ public class PlayerMove : MonoBehaviour
 
         // OnDirectionChange
         if (LastDirection != PlayerCharacter.FacingDirection && PlayerCharacter.FacingDirection != Vector3.zero ) {
-            OnDirectionChange?.Invoke(PlayerCharacter.FacingDirection);
+            OnDirectionChange?.Invoke();
             LastDirection = PlayerCharacter.FacingDirection;
         }
 
