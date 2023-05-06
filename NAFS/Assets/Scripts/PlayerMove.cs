@@ -32,17 +32,12 @@ public class PlayerMove : MonoBehaviour
     {
         IsMoving(out Vector3 velocity);
         IsActing();
-        
-        transform.Translate(velocity);
-        playerAnimator.UpdateVelocity(PlayerCharacter.FacingDirection);
 
-        // OnDirectionChange
+        transform.Translate(velocity); 
+  playerAnimator.UpdateVelocity(PlayerCharacter.FacingDirection);
+
         IsDirectionChanging();
-
-        // OnTileChange
         IsTileChanging();
-
-        // OnMove
         IsMoving();
     }
 
@@ -109,7 +104,8 @@ public class PlayerMove : MonoBehaviour
 
     private void IsMoving()
     {
-    if(LastPosition != transform.position) {
+        if( LastPosition != transform.position )
+        { 
             OnMove?.Invoke(transform.position);
             LastPosition = transform.position;
             PlayerCharacter.WorldPosition = transform.position;
