@@ -7,9 +7,9 @@ public class ItemUseAnimation : MonoBehaviour
     public SpriteRenderer renderer;
     public Animator animator;
 
-    public Item.UseAnimation AnimationType { get; set; } = Item.UseAnimation.NONE;
-    public Item.Behaviour ItemBehaviour { get; set; } = Item.Behaviour.NONE;
-    public bool InMotion { get; set; } = false;
+    public static Item.UseAnimation AnimationType { get; set; } = Item.UseAnimation.NONE;
+    public static Item.Behaviour ItemBehaviour { get; set; } = Item.Behaviour.NONE;
+    public static bool InMotion { get; set; } = false;
 
     public void Awake()
     {

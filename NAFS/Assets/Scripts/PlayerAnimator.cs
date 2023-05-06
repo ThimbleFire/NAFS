@@ -25,7 +25,7 @@ public class PlayerAnimator : MonoBehaviour
 
     public Item.Behaviour UseTool(Vector3 lastDirection)
     {
-        if (toolAnimator.InMotion)
+        if (ItemUseAnimation.InMotion)
             return Item.Behaviour.NONE;
 
         playerCharacterAnimator.SetTrigger("attack");
