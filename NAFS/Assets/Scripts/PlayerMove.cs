@@ -32,10 +32,6 @@ public class PlayerMove : MonoBehaviour
     {
         IsMoving(out Vector3 velocity);
         IsActing();
-
-        transform.Translate(velocity); 
-  playerAnimator.UpdateVelocity(PlayerCharacter.FacingDirection);
-
         IsDirectionChanging();
         IsTileChanging();
         IsMoving();
@@ -70,6 +66,8 @@ public class PlayerMove : MonoBehaviour
         if (Input.GetKey(KeyCode.S)) { velocity += Time.smoothDeltaTime * WalkSpeed * Vector3.down; }
 
         PlayerCharacter.FacingDirection = velocity.normalized;
+        transform.Translate(velocity); 
+        playerAnimator.UpdateVelocity(PlayerCharacter.FacingDirection);
     }
 
     private void IsActing()
@@ -86,9 +84,7 @@ public class PlayerMove : MonoBehaviour
 
     private void IsDirectionChanging()
     {
-        if (LastDirection != PlayerCharacter.FacingDirection &&
-            PlayerCharacter.FacingDirection != Vector3.zero )
-        {
+        if (LastDirection != PlayerCharacter.FacingDirection && PlayerCharacter.FacingDirection != Vector3.zero ) {
             OnDirectionChange?.Invoke();
             LastDirection = PlayerCharacter.FacingDirection;
         }
