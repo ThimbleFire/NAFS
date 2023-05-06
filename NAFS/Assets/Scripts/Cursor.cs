@@ -9,6 +9,19 @@ public class Cursor : MonoBehaviour
 {
     private readonly Vector3 tileCenterOffset = Vector3.one * Tile.HalfSize;
     public static Vector3Int Position { get; set; } = Vector3Int.zero;
+    public static Vector3 WorldPosition
+    {
+        get
+        {
+            Vector3 cursorWorldPosition =
+            PlayerCharacter.WorldPosition +
+            PlayerCharacter.FacingPosition * Tile.Size;
+
+            return new Vector3(
+                Mathf.Floor(cursorWorldPosition.x / Tile.Size) * Tile.Size,
+                Mathf.Floor(cursorWorldPosition.y / Tile.Size) * Tile.Size);
+        }
+    }
     private Vector3Int lastTile = Vector3Int.zero;
     public Grid grid;
     private static SpriteRenderer renderer;
@@ -23,12 +36,9 @@ public class Cursor : MonoBehaviour
 
     /// Update the cursor position when changing direction on the same tile
     private void PlayerMove_OnDirectionChange(Vector3 movementDirection) {
-        Vector3 cursorWorldPosition = PlayerCharacter.WorldPosition + movementDirection * Tile.Size;
-        cursorWorldPosition = new Vector3(
-            Mathf.Floor(cursorWorldPosition.x / Tile.Size) * Tile.Size, 
-            Mathf.Floor(cursorWorldPosition.y / Tile.Size) * Tile.Size);
-        Position = grid.WorldToCell(cursorWorldPosition + tileCenterOffset);
-        transform.position = cursorWorldPosition + tileCenterOffset;
+        
+        Position = grid.WorldToCell(Cursor.WorldPosition + tileCenterOffset);
+        transform.position = Cursor.WorldPosition + tileCenterOffset;
     }
 
     /// Update the cursor position when changing tile
