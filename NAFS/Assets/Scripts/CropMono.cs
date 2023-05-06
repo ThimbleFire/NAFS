@@ -8,6 +8,8 @@ class CropMono : MonoBehaviour
     private string cropName;
     private int GrowthStage {get; set;} = 0;
     private int Life {get; set;} = 2;
+    private int YieldMin = 3;
+    private int YieldMax = 4;
     public Sprite[] sprites;
     public SpriteRenderer renderer;
     
