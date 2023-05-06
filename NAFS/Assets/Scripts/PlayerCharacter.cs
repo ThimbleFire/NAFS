@@ -5,5 +5,5 @@ using UnityEngine;
 public class PlayerCharacter : MonoBehaviour
 {
     public static Vector3 WorldPosition = Vector3.zero;
-    public static Vector3 FacingPosition = Vector3.down;
+    public static Vector3 FacingDirection = Vector3.down;
 }
