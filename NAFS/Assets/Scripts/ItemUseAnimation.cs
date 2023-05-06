@@ -7,8 +7,11 @@ public class ItemUseAnimation : MonoBehaviour
     public SpriteRenderer renderer;
     public Animator animator;
 
+    [SerializeField]
     public static Item.UseAnimation AnimationType { get; set; } = Item.UseAnimation.NONE;
+    [SerializeField]
     public static Item.Behaviour ItemBehaviour { get; set; } = Item.Behaviour.NONE;
+    [SerializeField]
     public static bool InMotion { get; set; } = false;
 
     public void Awake()

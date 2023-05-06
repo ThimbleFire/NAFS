@@ -13,7 +13,7 @@ class CropMono : MonoBehaviour
     private Sprite[] sprites;
 
     private bool SubscribedToClock { get; set; } = false;
-    private bool CanBeHit { get; set; } = false;
+    private bool CanBeHit { get; set; } = true;
 
     public SpriteRenderer renderer;
 
@@ -46,13 +46,14 @@ class CropMono : MonoBehaviour
         if (CanBeHit == false)
             return;
 
+        CanBeHit = false;
+
         if (ItemUseAnimation.ItemBehaviour != Item.Behaviour.DAMAGE)
             return;
 
         if (collision.gameObject.CompareTag("playertoolcollider") == false)
             return;
 
-        CanBeHit = false;
 
         if (--Life <= 0)
         {
