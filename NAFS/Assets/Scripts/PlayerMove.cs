@@ -45,6 +45,8 @@ public class PlayerMove : MonoBehaviour
             velocity += Time.smoothDeltaTime * WalkSpeed * Vector3.down;
         }
 
+        PlayerCharacter.FacingDirection = velocity.normalized;
+
         if (Input.GetKeyDown(KeyCode.F)) {
             var resultingItemBehaviour = playerAnimator.UseTool(LastDirection);
 
@@ -55,16 +57,14 @@ public class PlayerMove : MonoBehaviour
                 Action(resultingItemBehaviour);
             }
         }
-
-        Vector3 direction = velocity.normalized;
         
         transform.Translate(velocity);
-        playerAnimator.UpdateVelocity(direction);
+        playerAnimator.UpdateVelocity(PlayerCharacter.FacingDirection);
 
         // OnDirectionChange
-        if (LastDirection != direction && direction != Vector3.zero ) {
-            OnDirectionChange?.Invoke(direction);
-            LastDirection = direction;
+        if (LastDirection != PlayerCharacter.FacingDirection && PlayerCharacter.FacingDirection != Vector3.zero ) {
+            OnDirectionChange?.Invoke(PlayerCharacter.FacingDirection);
+            LastDirection = PlayerCharacter.FacingDirection;
         }
 
         // OnTileChange
