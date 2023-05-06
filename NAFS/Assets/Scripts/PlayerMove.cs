@@ -32,30 +32,20 @@ public class PlayerMove : MonoBehaviour
     {
         Vector3 velocity = Vector3.zero;
 
-        if (Input.GetKey(KeyCode.A)) {
-            velocity += Time.smoothDeltaTime * WalkSpeed * Vector3.left;
-        }
-        if (Input.GetKey(KeyCode.D)) {
-            velocity += Time.smoothDeltaTime * WalkSpeed * Vector3.right;
-        }
-        if (Input.GetKey(KeyCode.W)) {
-            velocity += Time.smoothDeltaTime * WalkSpeed * Vector3.up;
-        }
-        if (Input.GetKey(KeyCode.S)) {
-            velocity += Time.smoothDeltaTime * WalkSpeed * Vector3.down;
-        }
+        if (Input.GetKey(KeyCode.A)) { velocity += Time.smoothDeltaTime * WalkSpeed * Vector3.left; }
+        if (Input.GetKey(KeyCode.D)) { velocity += Time.smoothDeltaTime * WalkSpeed * Vector3.right; }
+        if (Input.GetKey(KeyCode.W)) { velocity += Time.smoothDeltaTime * WalkSpeed * Vector3.up; }
+        if (Input.GetKey(KeyCode.S)) { velocity += Time.smoothDeltaTime * WalkSpeed * Vector3.down; }
 
         PlayerCharacter.FacingDirection = velocity.normalized;
 
-        if (Input.GetKeyDown(KeyCode.F)) {
+        if (Input.GetKeyDown(KeyCode.F))
+        {
             var resultingItemBehaviour = playerAnimator.UseTool(LastDirection);
 
             if (resultingItemBehaviour == Item.Behaviour.NONE)
                 return;
-            else
-            {
-                Action(resultingItemBehaviour);
-            }
+            else Action(resultingItemBehaviour);
         }
         
         transform.Translate(velocity);
