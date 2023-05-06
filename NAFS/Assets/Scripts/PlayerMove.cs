@@ -40,17 +40,10 @@ public class PlayerMove : MonoBehaviour
         IsDirectionChanging();
 
         // OnTileChange
-        if(LastTile != OnTile) {
-            OnTileChange?.Invoke(OnTile);
-            LastTile = OnTile;
-        }
+        IsTileChanging();
 
         // OnMove
-        if(LastPosition != transform.position) {
-            OnMove?.Invoke(transform.position);
-            LastPosition = transform.position;
-            PlayerCharacter.WorldPosition = transform.position;
-        }
+        IsMoving();
     }
 
     private void Action(Item.Behaviour resultingItemBehaviour)
@@ -105,5 +98,21 @@ public class PlayerMove : MonoBehaviour
             LastDirection = PlayerCharacter.FacingDirection;
         }
     }
-}
+
+    private void IsTileChanging()
+    {
+        if(LastTile != OnTile) {
+            OnTileChange?.Invoke(OnTile);
+            LastTile = OnTile;
+        }
+    }
+
+    private void IsMoving()
+    {
+    if(LastPosition != transform.position) {
+            OnMove?.Invoke(transform.position);
+            LastPosition = transform.position;
+            PlayerCharacter.WorldPosition = transform.position;
+        }
+    }
 }
