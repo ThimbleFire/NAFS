@@ -58,8 +58,10 @@ public class PlayerMove : MonoBehaviour
         }
     }
 
-    private void IsMoving(out Vector3 velocity = Vector3.zero)
+    private void IsMoving(out Vector3 velocity)
     {
+        velocity = Vector3.zero;
+
         if (Input.GetKey(KeyCode.A)) { velocity += Time.smoothDeltaTime * WalkSpeed * Vector3.left; }
         if (Input.GetKey(KeyCode.D)) { velocity += Time.smoothDeltaTime * WalkSpeed * Vector3.right; }
         if (Input.GetKey(KeyCode.W)) { velocity += Time.smoothDeltaTime * WalkSpeed * Vector3.up; }

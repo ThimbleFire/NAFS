@@ -48,6 +48,9 @@ public class ItemUseAnimation : MonoBehaviour
 
     private void Inventory_OnActiveItemChangeFromUnequip()
     {
+        renderer.sprite = null;
         AnimationType = Item.UseAnimation.NONE;
+        ItemBehaviour = Item.Behaviour.NONE;
+        gameObject.name = "tool animation";
     }
 }

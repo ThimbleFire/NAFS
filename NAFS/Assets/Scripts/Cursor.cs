@@ -15,7 +15,7 @@ public class Cursor : MonoBehaviour
         {
             Vector3 cursorWorldPosition =
             PlayerCharacter.WorldPosition +
-            PlayerCharacter.FacingPosition * Tile.Size;
+            PlayerCharacter.FacingDirection * Tile.Size;
 
             return new Vector3(
                 Mathf.Floor(cursorWorldPosition.x / Tile.Size) * Tile.Size,
@@ -35,9 +35,9 @@ public class Cursor : MonoBehaviour
     }
 
     /// Update the cursor position when changing direction on the same tile
-    private void PlayerMove_OnDirectionChange(Vector3 movementDirection) {
+    private void PlayerMove_OnDirectionChange() {
         
-        Position = grid.WorldToCell(Cursor.WorldPosition + tileCenterOffset);
+        Position = grid.WorldToCell(Cursor.WorldPosition + tileCenterOffset);   
         transform.position = Cursor.WorldPosition + tileCenterOffset;
     }
 
