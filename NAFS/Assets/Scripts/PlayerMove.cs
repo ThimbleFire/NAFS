@@ -33,15 +33,11 @@ public class PlayerMove : MonoBehaviour
         IsMoving(out Vector3 velocity);
         IsActing();
         
-        
         transform.Translate(velocity);
         playerAnimator.UpdateVelocity(PlayerCharacter.FacingDirection);
 
         // OnDirectionChange
-        if (LastDirection != PlayerCharacter.FacingDirection && PlayerCharacter.FacingDirection != Vector3.zero ) {
-            OnDirectionChange?.Invoke();
-            LastDirection = PlayerCharacter.FacingDirection;
-        }
+        IsDirectionChanging();
 
         // OnTileChange
         if(LastTile != OnTile) {
@@ -78,10 +74,8 @@ public class PlayerMove : MonoBehaviour
         }
     }
 
-    public void IsMoving(out Vector3 velocity)
+    private void IsMoving(out Vector3 velocity = Vector3.zero)
     {
-Vector3 velocity = Vector3.zero;
-
         if (Input.GetKey(KeyCode.A)) { velocity += Time.smoothDeltaTime * WalkSpeed * Vector3.left; }
         if (Input.GetKey(KeyCode.D)) { velocity += Time.smoothDeltaTime * WalkSpeed * Vector3.right; }
         if (Input.GetKey(KeyCode.W)) { velocity += Time.smoothDeltaTime * WalkSpeed * Vector3.up; }
@@ -101,4 +95,15 @@ Vector3 velocity = Vector3.zero;
             else Action(resultingItemBehaviour);
         }
     }
+
+    private void IsDirectionChanging()
+    {
+        if (LastDirection != PlayerCharacter.FacingDirection &&
+            PlayerCharacter.FacingDirection != Vector3.zero )
+        {
+            OnDirectionChange?.Invoke();
+            LastDirection = PlayerCharacter.FacingDirection;
+        }
+    }
+}
 }
