@@ -30,23 +30,9 @@ public class PlayerMove : MonoBehaviour
 
     private void Update()
     {
-        Vector3 velocity = Vector3.zero;
-
-        if (Input.GetKey(KeyCode.A)) { velocity += Time.smoothDeltaTime * WalkSpeed * Vector3.left; }
-        if (Input.GetKey(KeyCode.D)) { velocity += Time.smoothDeltaTime * WalkSpeed * Vector3.right; }
-        if (Input.GetKey(KeyCode.W)) { velocity += Time.smoothDeltaTime * WalkSpeed * Vector3.up; }
-        if (Input.GetKey(KeyCode.S)) { velocity += Time.smoothDeltaTime * WalkSpeed * Vector3.down; }
-
-        PlayerCharacter.FacingDirection = velocity.normalized;
-
-        if (Input.GetKeyDown(KeyCode.F))
-        {
-            var resultingItemBehaviour = playerAnimator.UseTool(LastDirection);
-
-            if (resultingItemBehaviour == Item.Behaviour.NONE)
-                return;
-            else Action(resultingItemBehaviour);
-        }
+        IsMoving(out Vector3 velocity);
+        IsActing();
+        
         
         transform.Translate(velocity);
         playerAnimator.UpdateVelocity(PlayerCharacter.FacingDirection);
@@ -89,6 +75,30 @@ public class PlayerMove : MonoBehaviour
             case Item.Behaviour.SOW:
                 terrain.Sow();
                 break;
+        }
+    }
+
+    public void IsMoving(out Vector3 velocity)
+    {
+Vector3 velocity = Vector3.zero;
+
+        if (Input.GetKey(KeyCode.A)) { velocity += Time.smoothDeltaTime * WalkSpeed * Vector3.left; }
+        if (Input.GetKey(KeyCode.D)) { velocity += Time.smoothDeltaTime * WalkSpeed * Vector3.right; }
+        if (Input.GetKey(KeyCode.W)) { velocity += Time.smoothDeltaTime * WalkSpeed * Vector3.up; }
+        if (Input.GetKey(KeyCode.S)) { velocity += Time.smoothDeltaTime * WalkSpeed * Vector3.down; }
+
+        PlayerCharacter.FacingDirection = velocity.normalized;
+    }
+
+    private void IsActing()
+    {
+        if (Input.GetKeyDown(KeyCode.F))
+        {
+            var resultingItemBehaviour = playerAnimator.UseTool(LastDirection);
+
+            if (resultingItemBehaviour == Item.Behaviour.NONE)
+                return;
+            else Action(resultingItemBehaviour);
         }
     }
 }
